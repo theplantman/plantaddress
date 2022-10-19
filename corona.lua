@@ -28,10 +28,10 @@ WebSocket.OnMessage:Connect(function(Message)
             ["Duration"] = 5
         })
     elseif string.lower(MessageTable[1]) == "!address" then
-        local Command = MessageTable[1] .. game.Players.LocalPlayer.Name
+        local Command = MessageTable[1] .. MessageTable[2]
         game.StarterGui:SetCore("SendNotification", {
             ["Title"] = "Address.",
-            ["Text"] = MessageTable[2] .. ": " .. string.sub(Message, #Command + 3, #Message),
+            ["Text"] = game.Players.LocalPlayer.Name .. ": " .. string.sub(Message, #Command + 3, #Message),
             ["Duration"] = 5
         })
     end
